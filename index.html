@@ -3,43 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Voice of Gaza | Gazze'nin Sesi — Küresel İnsani Farkındalık Platformu</title>
+<title>Voice of Gaza | Yıkılan Evler, Hastaneler ve Yaralı Yavruların Sesi</title>
 <link href="https://googleapis.com" rel="stylesheet">
 <style>
-:root{--bg:#0b0d0e;--card:#14181a;--red:#ce1126;--green:#007a3d;--gold:#e0b84c;--text:#f4f6f7;--muted:#a3adb2;--border:rgba(255,255,255,0.12)}
+:root{--bg:#090a0b;--card:rgba(16,19,21,0.88);--red:#ce1126;--green:#007a3d;--gold:#e0b84c;--text:#f4f6f7;--muted:#bcc4c9;--border:rgba(255,255,255,0.16)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.65}
+body{
+  background-color:var(--bg);
+  background-image:linear-gradient(to bottom, rgba(8,9,10,0.82), rgba(10,11,12,0.92)), url('https://unsplash.com');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:var(--text);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  line-height:1.65;
+}
 .flag-bar{height:6px;background:linear-gradient(90deg,#000 25%,#fff 25%,#fff 50%,var(--green) 50%,var(--green) 75%,var(--red) 75%)}
-header{text-align:center;padding:2.5rem 1rem;background:radial-gradient(circle at top,#1f1214,#0b0d0e);border-bottom:1px solid var(--border)}
-.badge{display:inline-block;background:rgba(206,17,38,0.2);color:#ff5c6c;border:1px solid var(--red);padding:5px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:12px}
-h1{font-size:2.3rem;font-weight:800;margin-bottom:10px}
-.sub{color:var(--muted);max-width:740px;margin:0 auto 18px;font-size:15px}
+header{text-align:center;padding:2.6rem 1rem;background:linear-gradient(to bottom, rgba(20,10,12,0.85), rgba(10,11,12,0.75));border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+.badge{display:inline-block;background:rgba(206,17,38,0.28);color:#ff6b7a;border:1px solid var(--red);padding:5px 14px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:12px}
+h1{font-size:2.2rem;font-weight:800;margin-bottom:10px;text-shadow:0 2px 12px rgba(0,0,0,0.8)}
+.sub{color:#d5dcdf;max-width:780px;margin:0 auto 18px;font-size:15px}
 .lang-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
 .btn{background:var(--red);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13.5px;transition:0.2s;text-decoration:none;display:inline-block}
-.btn:hover{opacity:0.9;transform:translateY(-1px)}
-.btn-dark{background:var(--card);border:1px solid var(--border);color:var(--text)}
+.btn:hover{opacity:0.92;transform:translateY(-1px)}
+.btn-dark{background:rgba(24,28,31,0.92);border:1px solid var(--border);color:var(--text)}
 .btn-green{background:var(--green)}
 .wrap{max-width:1120px;margin:28px auto;padding:0 16px 60px}
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;margin-bottom:28px}
-.stat-card{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:12px;padding:20px;text-align:center}
-.stat-num{font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:4px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:12px;padding:20px;text-align:center;backdrop-filter:blur(8px)}
+.stat-num{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:4px}
 .stat-lbl{font-size:13px;color:var(--muted)}
-.sec-title{font-size:1.4rem;font-weight:700;margin:28px 0 14px;padding-left:12px;border-left:4px solid var(--green)}
+.sec-title{font-size:1.35rem;font-weight:700;margin:28px 0 14px;padding-left:12px;border-left:4px solid var(--red);text-shadow:0 2px 8px rgba(0,0,0,0.8)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
-.card h3{color:#fff;font-size:18px;margin-bottom:8px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;backdrop-filter:blur(8px)}
+.card h3{color:#fff;font-size:17.5px;margin-bottom:8px}
 .card p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
-.share-box{background:#090b0c;border:1px dashed var(--border);padding:12px;border-radius:8px;font-size:13.5px;color:#dce3e6;margin-bottom:12px}
-.counter-banner{background:linear-gradient(135deg,#0f291c,#14181a);border:1px solid var(--green);border-radius:16px;padding:24px;text-align:center;margin-bottom:28px}
+.share-box{background:rgba(7,8,9,0.85);border:1px dashed var(--border);padding:12px;border-radius:8px;font-size:13.5px;color:#e4eaed;margin-bottom:12px}
+.counter-banner{background:linear-gradient(135deg,rgba(18,32,25,0.9),rgba(20,16,17,0.9));border:1px solid var(--red);border-radius:16px;padding:24px;text-align:center;margin-bottom:28px;backdrop-filter:blur(8px)}
 </style>
 </head>
 <body>
 <div class="flag-bar"></div>
 
 <header>
-  <div class="badge" id="topBadge">HUMANITARIAN AWARENESS • KÜRESEL FARKINDALIK</div>
-  <h1 id="mainTitle">GAZZE'NİN SESİ • VOICE OF GAZA</h1>
-  <p class="sub" id="mainSub">Sivillerin, çocukların ve masum insanların yaşam hakkını savunmak; Gazze'deki insani krizi unutturmamak ve tüm dünyaya duyurmak için oluşturulmuş küresel dayanışma platformu.</p>
+  <div class="badge" id="topBadge">KÜRESEL İNSANİ FARKINDALIK • HUMANITY FOR GAZA</div>
+  <h1 id="mainTitle">YIKILAN EVLER, HASTANELER VE YARALI YAVRULARIN SESİ</h1>
+  <p class="sub" id="mainSub">Enkaz altında kalan yuvalar, hizmet dışı bırakılan hastaneler ve kolunu-bacağını kaybeden masum çocukların tedavi, protez ve yaşam hakkını tüm dünyaya duyurmak için oluşturulmuş küresel dayanışma platformu.</p>
   <div class="lang-row">
     <button class="btn" onclick="setLang('tr')">🇹🇷 Türkçe Görünüm</button>
     <button class="btn btn-dark" onclick="setLang('en')">🌍 English (Global View)</button>
@@ -48,82 +57,80 @@ h1{font-size:2.3rem;font-weight:800;margin-bottom:10px}
 
 <div class="wrap">
   <div class="counter-banner">
-    <h2 id="supTitle" style="margin-bottom:6px">Küresel Dayanışma ve Ses Verme Zinciri</h2>
-    <p id="supDesc" style="color:var(--muted);font-size:14px;margin-bottom:14px">Sen de tek tıkla sesini yükselt, Gazze'deki masum siviller için farkındalık zincirine katıl.</p>
+    <h2 id="supTitle" style="margin-bottom:6px">Yaralı Çocuklar ve Siviller İçin Küresel Ses Zinciri</h2>
+    <p id="supDesc" style="color:var(--muted);font-size:14px;margin-bottom:14px">Yıkılan hastanelerin yeniden ayağa kalkması ve uzuvlarını kaybeden çocukların tedaviye ulaşması için sesini yükselt.</p>
     <div style="font-size:2.2rem;font-weight:800;color:var(--gold);margin-bottom:12px"><span id="voiceCount">148.920</span> <span id="voiceUnit" style="font-size:15px;color:var(--muted)">Kişi Ses Verdi</span></div>
-    <button class="btn btn-green" id="voiceBtn" onclick="addVoice()">✋ Ben de Gazze İçin Ses Veriyorum</button>
+    <button class="btn btn-green" id="voiceBtn" onclick="addVoice()">✋ Ben de Gazze'deki Yavrular İçin Ses Veriyorum</button>
   </div>
 
   <div class="stats-grid" id="statsGrid"></div>
-  <h2 class="sec-title" id="tShare">Dünyaya Duyur: Tek Tıkla Paylaşılabilir Mesajlar</h2>
+  <h2 class="sec-title" id="tShare">Dünyaya Duyur: Tek Tıkla Paylaşılabilir Küresel Mesajlar</h2>
   <div class="grid" id="msgGrid"></div>
-
-  <h2 class="sec-title" id="tAid">Resmi İnsani Yardım ve Ulaşım Kanalları</h2>
+  <h2 class="sec-title" id="tAid">Güvenilir ve Resmi İnsani Yardım Kuruluşları</h2>
   <div class="grid" id="aidGrid"></div>
 </div>
 <script>
 var currentLang = "tr";
 
-var DATA = {
-  tr: {
-    topBadge: "KÜRESEL İNSANİ FARKINDALIK PLATFORMU",
-    mainTitle: "GAZZE'NİN SESİ • SESSİZ KALMA",
-    mainSub: "Sivillerin, çocukların ve masum insanların yaşam hakkını savunmak; Gazze'deki insani dramı unutturmamak ve tüm dünyaya duyurmak için oluşturulmuş küresel dayanışma platformu.",
-    supTitle: "Küresel Dayanışma ve Ses Verme Zinciri",
-    supDesc: "Sen de tek tıkla sesini yükselt, Gazze'deki masum siviller için farkındalık zincirine katıl.",
-    voiceUnit: "Kişi Ses Verdi",
-    voiceBtn: "✋ Ben de Gazze İçin Ses Veriyorum",
-    voiceDone: "✓ Sesiniz Kaydedildi! Şimdi Paylaşarak Büyütün",
-    tShare: "Dünyaya Duyur: Tek Tıkla Paylaşılabilir Küresel Mesajlar",
-    tAid: "Güvenilir ve Resmi İnsani Yardım Kuruluşları",
-    stats: new Array(
-      {num:"2.3 Milyon+", lbl:"Temel Gıda, Su ve Barınma Desteğine Muhtaç Sivil Nüfus"},
-      {num:"Çocuk Hakları", lbl:"Eğitim, Sağlık ve Güvenli Yaşam Hakkından Mahrum Bırakılan Nesil"},
-      {num:"Sağlık Krizi", lbl:"İlaç, Tıbbi Malzeme ve Hastane Kapasitesi Kritik Seviyede"},
-      {num:"İnsani Koridor", lbl:"Kesintisiz İnsani Yardım ve Kalıcı Ateşkes Çağrısı"}
-    ),
-    msgs: new Array(
-      {title:"1. Küresel Vicdan Çağrısı (İngilizce - Tüm Dünya İçin)",text:"Silence in the face of humanitarian suffering is not neutrality. Millions of innocent civilians and children in Gaza need clean water, medical aid, and immediate protection. Be their voice! #Gaza #HumanityFirst #CeasefireNow #VoiceOfGaza"},
-      {title:"2. Çocuklar ve Siviller İçin Yaşam Hakkı (Türkçe)",text:"Gazze'de yaşanan insani drama sessiz kalma! Çocukların yaşam hakkı, temiz su, gıda ve ilaç erişimi temel insan hakkıdır. Unutma, unutturma! #Gazze #İnsanlıkÖlmesin #GazzeninSesi"},
-      {title:"3. Uluslararası Basın ve Sosyal Medya Etiketi (Çift Dilli)",text:"Every child deserves a safe tomorrow. Her çocuğun güvenli bir yarına hakkı vardır. Gazze için sesini yükselt, insani yardım koridorlarının açık tutulmasına destek ol! #FreePalestine #GazaChildren #HumanitarianAid"}
-    ),
-    aids: new Array(
-      {title:"Türk Kızılay — Gazze İnsani Yardım Kampanyası",desc:"Gıda kolisi, sıcak yemek, temiz su, barınma ve tıbbi yardım malzemelerini bölgeye ulaştıran resmi yardım kuruluşu.",url:"https://kizilay.org.tr",btn:"Resmi Siteye Git"},
-      {title:"AFAD — Filistin / Gazze İnsani Yardım",desc:"T.C. İçişleri Bakanlığı Afet ve Acil Durum Yönetimi Başkanlığı resmi insani yardım koordinasyon kanalı.",url:"https://afad.gov.tr",btn:"Resmi Siteye Git"},
-      {title:"UNRWA — Birleşmiş Milletler Filistin Mültecileri Ajansı",desc:"Gazze'deki sivillere acil gıda, barınma ve sağlık hizmeti sağlayan uluslararası BM kuruluşu.",url:"https://unrwa.org",btn:"UNRWA Global"}
-    )
-  },
-  en: {
-    topBadge: "GLOBAL HUMANITARIAN AWARENESS PLATFORM",
-    mainTitle: "VOICE OF GAZA • DO NOT STAY SILENT",
-    mainSub: "A global solidarity platform dedicated to defending the right to life of innocent civilians and children, keeping the humanitarian crisis in Gaza visible to the world.",
-    supTitle: "Global Solidarity & Voice Chain",
-    supDesc: "Raise your voice with one click and join the global awareness chain for innocent civilians in Gaza.",
-    voiceUnit: "Voices Raised",
-    voiceBtn: "✋ I Raise My Voice for Gaza",
-    voiceDone: "✓ Your Voice is Recorded! Share to Amplify",
-    tShare: "Amplify to the World: One-Click Shareable Messages",
-    tAid: "Official & Verified Humanitarian Aid Channels",
-    stats: new Array(
-      {num:"2.3 Million+", lbl:"Civilians in Urgent Need of Food, Clean Water & Shelter"},
-      {num:"Child Rights", lbl:"A Generation Deprived of Safety, Healthcare & Education"},
-      {num:"Medical Crisis", lbl:"Critical Shortage of Medicine, Fuel & Hospital Capacity"},
-      {num:"Aid Corridor", lbl:"Urgent Call for Unhindered Aid & Permanent Ceasefire"}
-    ),
-    msgs: new Array(
-      {title:"1. Global Conscience Call (English)",text:"Silence in the face of humanitarian suffering is not neutrality. Millions of innocent civilians and children in Gaza need clean water, medical aid, and immediate protection. Be their voice! #Gaza #HumanityFirst #CeasefireNow #VoiceOfGaza"},
-      {title:"2. Right to Life for Children (English)",text:"Every child deserves a safe tomorrow. Clean water, food, and healthcare are fundamental human rights, not privileges. Do not look away from Gaza! #GazaChildren #HumanRights #SaveGaza"},
-      {title:"3. Bilingual Solidarity Post (EN / TR)",text:"Every child deserves a safe tomorrow. Her çocuğun güvenli bir yarına hakkı vardır. Stand with humanity and amplify the voice of innocent civilians in Gaza! #VoiceOfGaza #HumanityFirst"}
-    ),
-    aids: new Array(
-      {title:"UNRWA — UN Relief and Works Agency",desc:"International UN agency providing emergency food, shelter, and healthcare to civilians in Gaza.",url:"https://unrwa.org",btn:"Visit UNRWA"},
-      {title:"UNICEF — Children of Gaza Emergency Appeal",desc:"Delivering clean water, medical supplies, and life-saving support for children in Gaza.",url:"https://unicef.org",btn:"Visit UNICEF"},
-      {title:"Turkish Red Crescent (Türk Kızılay)",desc:"Delivering food parcels, hot meals, clean water, and medical supplies to civilians in Gaza.",url:"https://kizilay.org.tr",btn:"Visit Official Site"}
-    )
-  }
+var DATA_TR = {
+  topBadge: "KÜRESEL İNSANİ FARKINDALIK • HUMANITY FOR GAZA",
+  mainTitle: "YIKILAN EVLER, HASTANELER VE YARALI YAVRULARIN SESİ",
+  mainSub: "Enkaz altında kalan yuvalar, hizmet dışı bırakılan hastaneler ve kolunu-bacağını kaybeden masum çocukların tedavi, protez ve yaşam hakkını tüm dünyaya duyurmak için oluşturulmuş küresel dayanışma platformu.",
+  supTitle: "Yaralı Çocuklar ve Siviller İçin Küresel Ses Zinciri",
+  supDesc: "Yıkılan hastanelerin yeniden ayağa kalkması ve uzuvlarını kaybeden çocukların tedaviye ulaşması için sesini yükselt.",
+  voiceUnit: "Kişi Ses Verdi",
+  voiceBtn: "✋ Ben de Gazze'deki Yavrular İçin Ses Veriyorum",
+  voiceDone: "✓ Sesiniz Kaydedildi! Şimdi Paylaşarak Tüm Dünyaya Duyurun",
+  tShare: "Dünyaya Duyur: Tek Tıkla Paylaşılabilir Küresel Mesajlar",
+  tAid: "Güvenilir ve Resmi İnsani Yardım Kuruluşları",
+  stats: new Array(
+    {num:"Yıkılan Yuvalar", lbl:"Yüz Binlerce Aile Evsiz ve Enkaz Altında"},
+    {num:"Hastaneler", lbl:"Sağlık Altyapısı Çökmüş, İlaç ve Ameliyathane Yetersiz"},
+    {num:"Yaralı Yavrular", lbl:"Kolunu ve Bacağını Kaybeden Binlerce Çocuk Protez ve Tedavi Bekliyor"},
+    {num:"Acil Koridor", lbl:"Yaralıların Tahliyesi ve Kesintisiz Tıbbi Yardım Çağrısı"}
+  ),
+  msgs: new Array(
+    {title:"1. Yaralı Çocuklar ve Yıkılan Hastaneler İçin Küresel Çağrı (İngilizce)",text:"Hospitals reduced to rubble, homes destroyed, and thousands of innocent children in Gaza who lost their limbs need urgent medical evacuation, prosthetics, and clean water. Do not stay silent! #GazaChildren #SaveGaza #HumanityFirst #VoiceOfGaza"},
+    {title:"2. Yıkılan Evler ve Uzuvlarını Kaybeden Yavrular (Türkçe)",text:"Evleri yıkılan, hastaneleri vurulan ve kolunu-bacağını kaybeden Gazze'deki masum yavruların çığlığına sessiz kalma! Tedavi, protez ve yaşam hakkı için tüm dünyaya duyur! #Gazze #ÇocuklarÖlmesin #GazzeninSesi"},
+    {title:"3. Uluslararası Tıbbi Yardım ve Ateşkes Çağrısı (Çift Dilli)",text:"Every injured child deserves healing and a safe future. Her yaralı çocuğun tedaviye ve güvenli bir geleceğe hakkı vardır. Be the voice for Gaza's children! #FreePalestine #GazaHospitals #HumanitarianAid"}
+  ),
+  aids: new Array(
+    {title:"Türk Kızılay — Gazze İnsani Yardım Kampanyası",desc:"Gıda kolisi, sıcak yemek, temiz su, barınma ve tıbbi yardım malzemelerini bölgeye ulaştıran resmi yardım kuruluşu.",url:atob("aHR0cHM6Ly93d3cua2l6aWxheS5vcmcudHI="),btn:"Resmi Siteye Git"},
+    {title:"AFAD — Filistin / Gazze İnsani Yardım",desc:"T.C. İçişleri Bakanlığı Afet ve Acil Durum Yönetimi Başkanlığı resmi insani yardım koordinasyon kanalı.",url:atob("aHR0cHM6Ly93d3cuYWZhZC5nb3YudHI="),btn:"Resmi Siteye Git"},
+    {title:"UNRWA — Birleşmiş Milletler Filistin Mültecileri Ajansı",desc:"Gazze'deki sivillere acil gıda, barınma ve sağlık hizmeti sağlayan uluslararası BM kuruluşu.",url:atob("aHR0cHM6Ly93d3cudW5yd2Eub3Jn"),btn:"UNRWA Global"}
+  )
+};
+
+var DATA_EN = {
+  topBadge: "GLOBAL HUMANITARIAN AWARENESS • VOICE OF GAZA",
+  mainTitle: "DESTROYED HOMES, HOSPITALS & INJURED CHILDREN",
+  mainSub: "A global solidarity platform dedicated to amplifying the cries of families under rubble, bombed hospitals, and thousands of innocent children in Gaza who lost their limbs and need urgent medical care.",
+  supTitle: "Global Voice Chain for Injured Children & Civilians",
+  supDesc: "Raise your voice so destroyed hospitals can be rebuilt and children who lost their limbs receive urgent prosthetics and treatment.",
+  voiceUnit: "Voices Raised",
+  voiceBtn: "✋ I Raise My Voice for Gaza's Children",
+  voiceDone: "✓ Your Voice is Recorded! Share to Amplify Worldwide",
+  tShare: "Amplify to the World: One-Click Shareable Messages",
+  tAid: "Official & Verified Humanitarian Aid Channels",
+  stats: new Array(
+    {num:"Destroyed Homes", lbl:"Hundreds of Thousands of Families Left Homeless Under Rubble"},
+    {num:"Bombed Hospitals", lbl:"Healthcare System Collapsed, Critical Shortage of Medicine"},
+    {num:"Injured Children", lbl:"Thousands of Amputee Children Need Urgent Prosthetics & Care"},
+    {num:"Medical Corridor", lbl:"Urgent Call for Medical Evacuation & Permanent Ceasefire"}
+  ),
+  msgs: new Array(
+    {title:"1. Global Call for Amputee Children & Hospitals (English)",text:"Hospitals reduced to rubble, homes destroyed, and thousands of innocent children in Gaza who lost their limbs need urgent medical evacuation, prosthetics, and clean water. Do not stay silent! #GazaChildren #SaveGaza #HumanityFirst #VoiceOfGaza"},
+    {title:"2. Right to Healing & Life for Children (English)",text:"Every child deserves a safe tomorrow and urgent medical care. Thousands of injured children in Gaza are waiting for prosthetics, clean water, and peace. Be their voice! #GazaHospitals #HumanRights #SaveGaza"},
+    {title:"3. Bilingual Solidarity Post (EN / TR)",text:"Every injured child deserves healing and a safe future. Her yaralı çocuğun tedaviye ve güvenli bir geleceğe hakkı vardır. Stand with humanity and amplify the voice of Gaza! #VoiceOfGaza #HumanityFirst"}
+  ),
+  aids: new Array(
+    {title:"UNRWA — UN Relief and Works Agency",desc:"International UN agency providing emergency food, shelter, and healthcare to civilians in Gaza.",url:atob("aHR0cHM6Ly93d3cudW5yd2Eub3Jn"),btn:"Visit UNRWA"},
+    {title:"UNICEF — Children of Gaza Emergency Appeal",desc:"Delivering clean water, medical supplies, and life-saving support for injured children in Gaza.",url:atob("aHR0cHM6Ly93d3cudW5pY2VmLm9yZw=="),btn:"Visit UNICEF"},
+    {title:"Turkish Red Crescent (Türk Kızılay)",desc:"Delivering food parcels, hot meals, clean water, and medical supplies to civilians in Gaza.",url:atob("aHR0cHM6Ly93d3cua2l6aWxheS5vcmcudHI="),btn:"Visit Official Site"}
+  )
 };
 function renderAll(){
-  var d = DATA[currentLang];
+  var d = (currentLang === "en") ? DATA_EN : DATA_TR;
   document.getElementById("topBadge").innerText = d.topBadge;
   document.getElementById("mainTitle").innerText = d.mainTitle;
   document.getElementById("mainSub").innerText = d.mainSub;
@@ -135,27 +142,23 @@ function renderAll(){
 
   var saved = Number(localStorage.getItem("gaza_voices") || 148920);
   document.getElementById("voiceCount").innerText = saved.toLocaleString("tr-TR");
-  if(localStorage.getItem("gaza_voted")){
-    document.getElementById("voiceBtn").innerText = d.voiceDone;
-  } else {
-    document.getElementById("voiceBtn").innerText = d.voiceBtn;
-  }
+  document.getElementById("voiceBtn").innerText = localStorage.getItem("gaza_voted") ? d.voiceDone : d.voiceBtn;
 
   document.getElementById("statsGrid").innerHTML = d.stats.map(function(s){
     return '<div class="stat-card"><div class="stat-num">'+s.num+'</div><div class="stat-lbl">'+s.lbl+'</div></div>';
   }).join("");
 
+  var twBase = atob("aHR0cHM6Ly90d2l0dGVyLmNvbS9pbnRlbnQvdHdlZXQ/dGV4dD0=");
+  var waBase = atob("aHR0cHM6Ly9hcGkud2hhdHNhcHAuY29tL3NlbmQ/dGV4dD0=");
+
   document.getElementById("msgGrid").innerHTML = d.msgs.map(function(m, i){
     var enc = encodeURIComponent(m.text);
     return '<div class="card">'+
-      '<div>'+
-        '<h3>'+m.title+'</h3>'+
-        '<div class="share-box" id="mtxt_'+i+'">'+m.text+'</div>'+
-      '</div>'+
+      '<div><h3>'+m.title+'</h3><div class="share-box" id="mtxt_'+i+'">'+m.text+'</div></div>'+
       '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
         '<button class="btn" onclick="copyMsg('+i+',this)">📋 Metni Kopyala</button>'+
-        '<a class="btn btn-dark" target="_blank" href="https://twitter.com+'">𝕏 Paylaş</a>'+
-        '<a class="btn btn-green" target="_blank" href="https://whatsapp.com+'">WhatsApp</a>'+
+        '<a class="btn btn-dark" target="_blank" href="'+twBase+enc+'">𝕏 Paylaş</a>'+
+        '<a class="btn btn-green" target="_blank" href="'+waBase+enc+'">WhatsApp</a>'+
       '</div>'+
     '</div>';
   }).join("");
